@@ -88,7 +88,7 @@ const Navbar = () => {
                   }}
                 >
                   
-                    <MenuItem  onClick={handleCloseNavMenu}>
+                 {/*    <MenuItem  onClick={handleCloseNavMenu}>
                        <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/home">
                         <Typography textAlign="center">Home</Typography>
                       </Link>
@@ -98,21 +98,21 @@ const Navbar = () => {
                       <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/appointment">
                          <Typography textAlign="center">Appointment</Typography>
                       </Link>
-                    </MenuItem>
+                    </MenuItem> */}
 
                     
                     <MenuItem  onClick={handleCloseNavMenu}>
                           <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/deshboard">
-                            <Typography style={{color:"#0F0C0B"}} textAlign="center">Desh Board</Typography>
+                            <Typography style={{color:"#0F0C0B"}} textAlign="center">Left Side Bar</Typography>
                           </Link>
                     </MenuItem>
                     
 
-                    <MenuItem  onClick={handleCloseNavMenu}>
+                   {/*  <MenuItem  onClick={handleCloseNavMenu}>
                       <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/contact">
                          <Typography textAlign="center">Contact Us</Typography>
                       </Link>
-                    </MenuItem>
+                    </MenuItem> */}
 
                     <MenuItem  onClick={handleCloseNavMenu}>
                     
@@ -127,7 +127,7 @@ const Navbar = () => {
 
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>
                 
-                  <Button
+                 {/*  <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: '#0F0C0B', display: 'block' }}>
                       <Link style={{textDecoration:"none",color:"#fff"}} to="/home">
@@ -142,23 +142,23 @@ const Navbar = () => {
                       <Link style={{textDecoration:"none",color:"#fff"}} to="/appointment">
                          <Typography textAlign="center">Appointment</Typography>
                       </Link>
-                  </Button>
+                  </Button> */}
 
                    <Button
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: '#fff', display: 'block' }}>
                           <Link style={{textDecoration:"none",color:"#fff"}} to="/deshboard">
-                            <Typography textAlign="center">DeshBoard</Typography>
+                            <Typography textAlign="center">Left Side Bar</Typography>
                           </Link>
                       </Button>
                   
-                  <Button
+                 {/*  <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: '#fff', display: 'block' }}>
                       <Link style={{textDecoration:"none",color:"#fff"}} to="/contact">
                          <Typography textAlign="center">Contact Us</Typography>
                       </Link>
-                  </Button>
+                  </Button> */}
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: '#fff', display: 'block' }}>
