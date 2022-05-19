@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
 import Box from '@mui/material/Box';
-import useAuth from './../../../Hooks/useAuth';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -23,20 +22,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 const AppointmentInfo = ({date}) => {
-    const {users,token} = useAuth(); 
     const [appointments,setAppointments] = useState([]);
     const DateLocal = new Date(date).toLocaleDateString();
 
-    useEffect(()=>{
-        const url = `https://peaceful-bayou-32308.herokuapp.com/appointments?email=${users.email}&date=${DateLocal}`;
-         fetch(url,{
-           headers:{
-             'authorization':`Bearer ${token}`
-           }
-         })
-        .then(res => res.json())
-        .then(data => setAppointments(data))
-    },[DateLocal,users.email,token])
+  
     
     return (
         <Box sx={{ml:{xs:0,sm:2}}}>

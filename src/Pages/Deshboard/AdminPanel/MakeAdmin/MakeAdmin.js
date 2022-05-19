@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import useAuth from './../../../Hooks/useAuth';
+
 
 const useStyle = makeStyles({
     input:{
@@ -32,7 +32,6 @@ const useStyle = makeStyles({
 const MakeAdmin = () => {
     const classes = useStyle();
     const [admin,setAdmin] = useState({role:"admin"});
-    const {token} = useAuth();
     const handleOnBulre = e =>{
         const field = e.target.name;
         const value = e.target.value;
@@ -46,7 +45,6 @@ const MakeAdmin = () => {
         fetch("https://peaceful-bayou-32308.herokuapp.com/users/admin",{
             method:"PUT",
             headers:{
-                'authorization':`Bearer ${token}`,
                 'content-type':'application/json'
             },
             body:JSON.stringify(admin)

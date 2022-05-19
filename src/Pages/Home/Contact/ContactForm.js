@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@mui/material/Box';
 import emailjs from '@emailjs/browser';
 import Button from '@mui/material/Button';
-import useAuth from './../../Hooks/useAuth';
 
 const useStyle = makeStyles({
     input:{
@@ -42,7 +41,6 @@ const useStyle = makeStyles({
 const ContactForm = () => {
     const classes = useStyle();
     const form = useRef();
-    const {users} = useAuth();
     const sendEmail = e =>{
         e.preventDefault()
         emailjs.sendForm('service_64fo5li', 'template_k82qf6c', e.target, 'sEIjvaT255FOB530n')

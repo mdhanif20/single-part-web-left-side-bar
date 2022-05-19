@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Link, useNavigate } from 'react-router-dom';
-import useAuth from './../../Hooks/useAuth';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -32,7 +31,6 @@ const useStyle = makeStyles({
     }
 })
 const Reagister = () => {
-    const {users,authError,registerUser,isLoading} = useAuth();
     const classes = useStyle();
     const [user,setUser] = useState({});
     const navigate = useNavigate();
@@ -49,7 +47,7 @@ const Reagister = () => {
             return
         }
         else{
-            registerUser(user.email,user.password,user.name)
+           
             navigate("/appointment")
         }
         
@@ -70,7 +68,7 @@ const Reagister = () => {
                             Register
                         </Typography>
 
-                { !isLoading &&  <form onSubmit={loginAccount}>
+                { <form onSubmit={loginAccount}>
                             <TextField 
                             sx={{width:{md:"75%",xs:1}}}
                             id="standard-basic"
@@ -111,14 +109,8 @@ const Reagister = () => {
                             </Link>
                     </form>
                 }
-                {isLoading && <CircularProgress />}
-                {users?.email && <Alert severity="success">Reagister Successfully.</Alert>}
-                {
-                    authError && <Alert severity="error">
-                    <AlertTitle>Error</AlertTitle>
-                    {authError}
-                </Alert>
-                }
+               
+                
             </Box>
 
                         

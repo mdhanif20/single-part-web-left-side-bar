@@ -10,15 +10,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link} from 'react-router-dom';
-import useAuth from './../../Hooks/useAuth';
 
 
 const Navbar = () => {
-    const {users,logOut} = useAuth();
     const logOutEmail = () =>{
       const sure = window.confirm("Are You Sure? You Want To log Out.");
       if(sure){
-        logOut();
+        
       }
     }
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -102,14 +100,13 @@ const Navbar = () => {
                       </Link>
                     </MenuItem>
 
-                    {
-                    users?.email && 
+                    
                     <MenuItem  onClick={handleCloseNavMenu}>
                           <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/deshboard">
                             <Typography style={{color:"#0F0C0B"}} textAlign="center">Desh Board</Typography>
                           </Link>
                     </MenuItem>
-                    }
+                    
 
                     <MenuItem  onClick={handleCloseNavMenu}>
                       <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/contact">
@@ -118,14 +115,7 @@ const Navbar = () => {
                     </MenuItem>
 
                     <MenuItem  onClick={handleCloseNavMenu}>
-                    {
-                        users?.email?
-                        <Typography onClick={()=>logOutEmail()} textAlign="center">Log Out</Typography>
-                        :
-                     <Link style={{textDecoration:"none",color:"#0F0C0B"}} to="/login">
-                        <Typography textAlign="center">Login</Typography>
-                     </Link>
-                      }
+                    
                     </MenuItem>
 
                 </Menu>
@@ -154,15 +144,14 @@ const Navbar = () => {
                       </Link>
                   </Button>
 
-                  {
-                        users?.email && <Button
+                   <Button
                         onClick={handleCloseNavMenu}
                         sx={{ my: 2, color: '#fff', display: 'block' }}>
                           <Link style={{textDecoration:"none",color:"#fff"}} to="/deshboard">
                             <Typography textAlign="center">DeshBoard</Typography>
                           </Link>
                       </Button>
-                  }
+                  
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: '#fff', display: 'block' }}>
@@ -173,14 +162,7 @@ const Navbar = () => {
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: '#fff', display: 'block' }}>
-                      {
-                        users?.email?
-                        <Typography onClick={()=>logOutEmail()} textAlign="center">Log Out</Typography>
-                        :
-                     <Link style={{textDecoration:"none",color:"#fff"}} to="/login">
-                        <Typography textAlign="center">Login</Typography>
-                     </Link>
-                      }
+                     
                   </Button>
                       
                  

@@ -22,7 +22,7 @@ import ContactUs from './Pages/Contact/ContactUs';
 function App() {
   return (
     <div className='App'> 
-     <AuthProvider>
+
       <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -31,11 +31,11 @@ function App() {
               
               <Route path="/deshboard/*" element={<Deshboard/>}> 
                 <Route path="patients" element={<Patients/>}/>  
-                <Route path="*" element={<ClientInfo/>}/>
-                  <Route path="*" element={<AdminRoute/>}>
+                <Route path="clientinfo" element={<ClientInfo/>}/>
+                 
                   <Route path="allAppointment" element={<AllAppointment/>}/>
                     <Route path="makeadmin" element={<MakeAdmin/>}/>
-                  </Route>
+                
               </Route>
               <Route path="/reagister" element={<Reagister/>} />
               <Route path="/*" element={<PrivateRoute/>}>
@@ -44,7 +44,7 @@ function App() {
               </Route>
             </Routes>
         </BrowserRouter>
-     </AuthProvider>
+
      
       </div>
   );

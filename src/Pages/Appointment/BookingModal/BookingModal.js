@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import useAuth from './../../Hooks/useAuth';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
@@ -27,10 +26,9 @@ const BookingModal = ({openBooking, setBookingSuccess, handleBookingClose,bookin
   
     const {name,time} = booking;
     const DateLocal = new Date(date).toLocaleDateString();
-    const {users} = useAuth();
-    const {displayName,email} = users;
-    const defaultInfo = {Name: displayName, email: email, phone:"",weight:"60",age:"30",gender:"Male",time:time,date:DateLocal,visited:"Not visited"}
-    const [bookingInfo,setBookingInfo] = useState(defaultInfo); 
+  
+   
+    const [bookingInfo,setBookingInfo] = useState(''); 
     const [age, setAge] = React.useState('');
     const handleChange = e => {
       setAge(e.target.value);
@@ -110,7 +108,7 @@ const BookingModal = ({openBooking, setBookingSuccess, handleBookingClose,bookin
                 name="Name"
                 onBlur={handleOnBlur}
                 id="outlined-size-small"
-                defaultValue={displayName}
+
                 size="small"
                 />
                  <FormControl sx={{ m: 1, minWidth:{xs:80,sm:100} }}>
@@ -150,7 +148,7 @@ const BookingModal = ({openBooking, setBookingSuccess, handleBookingClose,bookin
                 name="email"
                 onBlur={handleOnBlur}
                 id="outlined-size-small"
-                defaultValue={email}
+
                 size="small"
                 />
                <Box sx={{display:"flex"}}>
